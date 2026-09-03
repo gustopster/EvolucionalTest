@@ -1,0 +1,71 @@
+.delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(8, 6, 13, 0.45);
+}
+
+.delete-modal {
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fff;
+    padding: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.delete-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.1);
+    color: #dc2626;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.delete-modal h2 {
+    margin: 0;
+    color: var(--text-h);
+    font-size: 22px;
+}
+
+.delete-modal p {
+    margin: 12px 0 0;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.delete-modal p strong {
+    color: var(--text-h);
+}
+
+.delete-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+@media (max-width: 520px) {
+    .delete-modal {
+        padding: 22px;
+    }
+
+    .delete-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .delete-modal-actions button {
+        width: 100%;
+    }
+}

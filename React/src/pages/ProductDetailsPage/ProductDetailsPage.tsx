@@ -6,6 +6,8 @@ import { getProductById } from '../../services/productService';
 
 import type { Product } from '../../types/product';
 
+import { ConfirmDeleteModal } from '../../components/ConfirmDeleteModal/ConfirmDeleteModal';
+
 import "./ProductDetailsPage.css"
 
 export const ProductDetailsPage = () => {
@@ -15,6 +17,8 @@ export const ProductDetailsPage = () => {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     useEffect(() => {
         const loadProduct = async () => {
@@ -122,6 +126,7 @@ export const ProductDetailsPage = () => {
                         <button
                             type="button"
                             className="delete-button"
+                            onClick={() => setShowDeleteModal(true)}
                         >
                             Excluir
                         </button>
@@ -225,6 +230,15 @@ export const ProductDetailsPage = () => {
                     </div>
                 </section>
             </div>
+
+            {showDeleteModal && (
+                <ConfirmDeleteModal
+                    productName={product.nome}
+                    onCancel={() => setShowDeleteModal(false)}
+                    onConfirm={() => { }}
+                />
+            )}
+
         </main>
     );
 };
