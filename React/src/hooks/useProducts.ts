@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
@@ -10,121 +10,154 @@ const ITEMS_PER_PAGE = 10;
 
 const SEARCH_DEBOUNCE_MS = 500;
 
+const getSavedState = (storageKey: string): ProductsPageState | null => {
+    const savedState = sessionStorage.getItem(storageKey);
+
+    if (!savedState) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(savedState);
+    } catch {
+        sessionStorage.removeItem(storageKey);
+        return null;
+    }
+};
+
 export const useProducts = () => {
     const location = useLocation();
 
-    const storageKey = `products-page-${location.key}`;
+    const storageKey = `products - page - ${location.key} `;
 
-    const [products, setProducts] = useState<Product[]>([]);
-    const [total, setTotal] = useState(0);
-    const [page, setPage] = useState(1);
-    const [initialLoading, setInitialLoading] = useState(true);
+    const savedState = getSavedState(storageKey);
+
+    const [products, setProducts] = useState<Product[]>(
+        savedState?.products ?? []
+    );
+
+    const [total, setTotal] = useState(
+        savedState?.total ?? 0
+    );
+
+    const [page, setPage] = useState(
+        savedState?.page ?? 1
+    );
+
+    const [initialLoading, setInitialLoading] = useState(
+        savedState === null
+    );
+
     const [loading, setLoading] = useState(false);
+
     const [loadingMore, setLoadingMore] = useState(false);
+
     const [error, setError] = useState('');
-    const [searchInput, setSearchInput] = useState('');
-    const [search, setSearch] = useState('');
-    const [categoria, setCategoria] = useState('');
+
+    const [searchInput, setSearchInput] = useState(
+        savedState?.searchInput ?? ''
+    );
+
+    const [search, setSearch] = useState(
+        savedState?.search ?? ''
+    );
+
+    const [categoria, setCategoria] = useState(
+        savedState?.categoria ?? ''
+    );
 
     const loadMoreRef = useRef<HTMLDivElement | null>(null);
+
     const isFirstLoad = useRef(true);
+
     const requestIdRef = useRef(0);
-    const restoredScrollY = useRef<number | null>(null);
 
-    const loadProducts = async (
-        pageToLoad: number,
-        isInitialLoad = false
-    ) => {
-        const requestId = ++requestIdRef.current;
+    const restoredScrollY = useRef<number | null>(
+        savedState?.scrollY ?? null
+    );
 
-        try {
-            if (isInitialLoad) {
-                setInitialLoading(true);
-            } else if (pageToLoad === 1) {
-                setLoading(true);
-            } else {
-                setLoadingMore(true);
-            }
+    const loadProducts = useCallback(
+        async (
+            pageToLoad: number,
+            isInitialLoad = false
+        ) => {
+            const requestId = ++requestIdRef.current;
 
-            setError('');
-
-            const response = await getProducts({
-                page: pageToLoad,
-                limit: ITEMS_PER_PAGE,
-                search,
-                categoria,
-            });
-
-            await new Promise((resolve) =>
-                setTimeout(resolve, 1500)
-            );
-
-            if (requestId !== requestIdRef.current) {
-                return;
-            }
-
-            setProducts((currentProducts) => {
-                if (pageToLoad === 1) {
-                    return response.products;
+            try {
+                if (isInitialLoad) {
+                    setInitialLoading(true);
+                } else if (pageToLoad === 1) {
+                    setLoading(true);
+                } else {
+                    setLoadingMore(true);
                 }
 
-                return [
-                    ...currentProducts,
-                    ...response.products,
-                ];
-            });
+                setError('');
 
-            setTotal(response.total);
-            setPage(pageToLoad);
-        } catch {
-            if (requestId !== requestIdRef.current) {
-                return;
-            }
+                const response = await getProducts({
+                    page: pageToLoad,
+                    limit: ITEMS_PER_PAGE,
+                    search,
+                    categoria,
+                });
 
-            setError('Não foi possível carregar os produtos.');
-        } finally {
-            if (requestId !== requestIdRef.current) {
-                return;
-            }
+                await new Promise((resolve) =>
+                    setTimeout(resolve, 1500)
+                );
 
-            if (isInitialLoad) {
-                setInitialLoading(false);
-            } else if (pageToLoad === 1) {
-                setLoading(false);
-            } else {
-                setLoadingMore(false);
+                if (requestId !== requestIdRef.current) {
+                    return;
+                }
+
+                setProducts((currentProducts) => {
+                    if (pageToLoad === 1) {
+                        return response.products;
+                    }
+
+                    return [
+                        ...currentProducts,
+                        ...response.products,
+                    ];
+                });
+
+                setTotal(response.total);
+                setPage(pageToLoad);
+            } catch {
+                if (requestId !== requestIdRef.current) {
+                    return;
+                }
+
+                setError(
+                    'Não foi possível carregar os produtos.'
+                );
+            } finally {
+                if (requestId === requestIdRef.current) {
+                    if (isInitialLoad) {
+                        setInitialLoading(false);
+                    } else if (pageToLoad === 1) {
+                        setLoading(false);
+                    } else {
+                        setLoadingMore(false);
+                    }
+                }
             }
-        }
-    };
+        },
+        [categoria, search]
+    );
 
     useEffect(() => {
-        const savedState = sessionStorage.getItem(storageKey);
-
         if (savedState) {
-            try {
-                const parsedState: ProductsPageState =
-                    JSON.parse(savedState);
-
-                setProducts(parsedState.products);
-                setTotal(parsedState.total);
-                setPage(parsedState.page);
-                setSearchInput(parsedState.searchInput);
-                setSearch(parsedState.search);
-                setCategoria(parsedState.categoria);
-
-                restoredScrollY.current =
-                    parsedState.scrollY;
-
-                setInitialLoading(false);
-
-                return;
-            } catch {
-                sessionStorage.removeItem(storageKey);
-            }
+            return;
         }
 
-        loadProducts(1, true);
-    }, []);
+        const timeout = setTimeout(() => {
+            loadProducts(1, true);
+        }, 0);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [loadProducts, savedState]);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -144,8 +177,9 @@ export const useProducts = () => {
 
         setProducts([]);
         setPage(1);
+
         loadProducts(1);
-    }, [search, categoria]);
+    }, [search, categoria, loadProducts]);
 
     useEffect(() => {
         if (initialLoading) {
@@ -272,6 +306,7 @@ export const useProducts = () => {
         products.length,
         total,
         page,
+        loadProducts,
     ]);
 
     return {
