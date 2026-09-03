@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { getProductById } from '../../services/productService';
+import { deleteProduct, getProductById } from '../../services/productService';
 
 import type { Product } from '../../types/product';
 
@@ -86,6 +86,26 @@ export const ProductDetailsPage = () => {
             </main>
         );
     }
+
+    const handleDelete = async () => {
+        try {
+            setError('');
+
+            await deleteProduct(product.id);
+
+            setShowDeleteModal(false);
+
+            navigate('/produtos');
+        } catch (error) {
+            setShowDeleteModal(false);
+
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError('Não foi possível excluir o produto.');
+            }
+        }
+    };
 
     return (
         <main className="products-page">
@@ -235,7 +255,7 @@ export const ProductDetailsPage = () => {
                 <ConfirmDeleteModal
                     productName={product.nome}
                     onCancel={() => setShowDeleteModal(false)}
-                    onConfirm={() => { }}
+                    onConfirm={handleDelete}
                 />
             )}
 
