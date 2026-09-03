@@ -20,3 +20,13 @@ export interface ProductListResponse {
     products: Product[];
     total: number;
 }
+
+export interface ProductsPageState {
+    products: Product[];
+    total: number;
+    page: number;
+    searchInput: string;
+    search: string;
+    categoria: string;
+    scrollY: number;
+}
