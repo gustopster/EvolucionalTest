@@ -80,7 +80,7 @@ Itens bônus (não obrigatórios, contam pontos):
 
 
 ENTREGA
--------
+------
 
 - Repositório no GitHub (público ou nos convide) ou um zip do projeto.
 - README com o passo a passo: como instalar, como subir a API fake e como
