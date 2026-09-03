@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ProductDetailsPage } from './ProductDetailsPage';
@@ -30,14 +30,22 @@ describe('ProductDetailsPage', () => {
     it('carrega e exibe os dados do produto', async () => {
         renderPage();
 
-        await waitFor(() => expect(screen.getByText('Teclado Mecânico')).toBeInTheDocument());
+        await waitFor(() =>
+            expect(
+                screen.getByRole('heading', { level: 1, name: 'Teclado Mecânico' })
+            ).toBeInTheDocument()
+        );
         expect(screen.getByText('Perifericos')).toBeInTheDocument();
         expect(screen.getByText('Ativo')).toBeInTheDocument();
     });
 
     it('abre a confirmação de exclusão', async () => {
         renderPage();
-        await waitFor(() => expect(screen.getByText('Teclado Mecânico')).toBeInTheDocument());
+        await waitFor(() =>
+            expect(
+                screen.getByRole('heading', { level: 1, name: 'Teclado Mecânico' })
+            ).toBeInTheDocument()
+        );
 
         fireEvent.click(screen.getByRole('button', { name: /excluir/i }));
         expect(screen.getByRole('heading', { name: 'Excluir produto?' })).toBeInTheDocument();
@@ -45,12 +53,32 @@ describe('ProductDetailsPage', () => {
 
     it('exclui o produto após confirmação', async () => {
         vi.mocked(productService.deleteProduct).mockResolvedValue(undefined);
+
         renderPage();
-        await waitFor(() => expect(screen.getByText('Teclado Mecânico')).toBeInTheDocument());
 
-        fireEvent.click(screen.getByRole('button', { name: /excluir/i }));
-        fireEvent.click(screen.getByRole('button', { name: 'Excluir' }));
+        await waitFor(() =>
+            expect(
+                screen.getByRole('heading', {
+                    level: 1,
+                    name: 'Teclado Mecânico',
+                })
+            ).toBeInTheDocument()
+        );
 
-        await waitFor(() => expect(productService.deleteProduct).toHaveBeenCalledWith(1));
+        fireEvent.click(
+            screen.getByRole('button', { name: /excluir/i })
+        );
+
+        const dialog = screen.getByRole('dialog');
+
+        fireEvent.click(
+            within(dialog).getByRole('button', { name: 'Excluir' })
+        );
+
+        await waitFor(() =>
+            expect(
+                productService.deleteProduct
+            ).toHaveBeenCalledWith(1)
+        );
     });
 });

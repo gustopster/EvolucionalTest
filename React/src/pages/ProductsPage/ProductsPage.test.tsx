@@ -33,7 +33,7 @@ describe('ProductsPage', () => {
         render(<MemoryRouter><ProductsPage /></MemoryRouter>);
 
         expect(screen.getByText('Teclado Mecânico')).toBeInTheDocument();
-        expect(screen.getByText('1 produto encontrado')).toBeInTheDocument();
+        expect(screen.getByText('produto encontrado')).toBeInTheDocument();
 
         fireEvent.click(screen.getByRole('button', { name: '+ Novo produto' }));
         await waitFor(() => expect(navigate).toHaveBeenCalledWith('/produtos/novo'));

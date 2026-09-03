@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1788468520329" clover="3.2.0">
+  <project timestamp="1788468520330" name="All files">
+    <metrics statements="292" coveredstatements="216" conditionals="181" coveredconditionals="105" methods="61" coveredmethods="46" elements="534" coveredelements="367" complexity="0" loc="292" ncloc="292" packages="6" files="10" classes="10"/>
+    <package name="components.ConfirmDeleteModal">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ConfirmDeleteModal.css" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\components\ConfirmDeleteModal\ConfirmDeleteModal.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ConfirmDeleteModal.tsx" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\components\ConfirmDeleteModal\ConfirmDeleteModal.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="119" coveredstatements="85" conditionals="55" coveredconditionals="32" methods="21" coveredmethods="18"/>
+      <file name="useProducts.ts" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\hooks\useProducts.ts">
+        <metrics statements="119" coveredstatements="85" conditionals="55" coveredconditionals="32" methods="21" coveredmethods="18"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="39" count="9" type="stmt"/>
+        <line num="43" count="9" type="stmt"/>
+        <line num="47" count="9" type="stmt"/>
+        <line num="51" count="9" type="stmt"/>
+        <line num="53" count="9" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
+        <line num="57" count="9" type="stmt"/>
+        <line num="61" count="9" type="stmt"/>
+        <line num="65" count="9" type="stmt"/>
+        <line num="69" count="9" type="stmt"/>
+        <line num="71" count="9" type="stmt"/>
+        <line num="73" count="9" type="stmt"/>
+        <line num="75" count="9" type="stmt"/>
+        <line num="79" count="9" type="stmt"/>
+        <line num="84" count="4" type="stmt"/>
+        <line num="86" count="4" type="stmt"/>
+        <line num="87" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="88" count="3" type="stmt"/>
+        <line num="89" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="95" count="4" type="stmt"/>
+        <line num="97" count="4" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="105" count="4" type="stmt"/>
+        <line num="108" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="112" count="3" type="stmt"/>
+        <line num="113" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="123" count="3" type="stmt"/>
+        <line num="124" count="3" type="stmt"/>
+        <line num="126" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="134" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="135" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="136" count="3" type="stmt"/>
+        <line num="137" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="148" count="9" type="stmt"/>
+        <line num="149" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="150" count="3" type="stmt"/>
+        <line num="153" count="3" type="stmt"/>
+        <line num="154" count="3" type="stmt"/>
+        <line num="157" count="3" type="stmt"/>
+        <line num="158" count="3" type="stmt"/>
+        <line num="162" count="9" type="stmt"/>
+        <line num="163" count="4" type="stmt"/>
+        <line num="164" count="3" type="stmt"/>
+        <line num="167" count="4" type="stmt"/>
+        <line num="168" count="4" type="stmt"/>
+        <line num="172" count="9" type="stmt"/>
+        <line num="173" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="174" count="3" type="stmt"/>
+        <line num="175" count="3" type="stmt"/>
+        <line num="178" count="1" type="stmt"/>
+        <line num="179" count="1" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
+        <line num="184" count="9" type="stmt"/>
+        <line num="185" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="186" count="3" type="stmt"/>
+        <line num="189" count="6" type="stmt"/>
+        <line num="199" count="6" type="stmt"/>
+        <line num="214" count="9" type="stmt"/>
+        <line num="215" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="216" count="7" type="stmt"/>
+        <line num="219" count="0" type="stmt"/>
+        <line num="221" count="0" type="stmt"/>
+        <line num="222" count="0" type="stmt"/>
+        <line num="227" count="0" type="stmt"/>
+        <line num="231" count="9" type="stmt"/>
+        <line num="232" count="6" type="stmt"/>
+        <line num="233" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="234" count="0" type="stmt"/>
+        <line num="237" count="0" type="stmt"/>
+        <line num="241" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="242" count="0" type="stmt"/>
+        <line num="245" count="0" type="stmt"/>
+        <line num="247" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="251" count="0" type="stmt"/>
+        <line num="256" count="0" type="stmt"/>
+        <line num="260" count="6" type="stmt"/>
+        <line num="262" count="6" type="stmt"/>
+        <line num="263" count="6" type="stmt"/>
+        <line num="270" count="9" type="stmt"/>
+        <line num="271" count="8" type="stmt"/>
+        <line num="273" count="0" type="stmt"/>
+        <line num="275" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="276" count="0" type="stmt"/>
+        <line num="279" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="280" count="0" type="stmt"/>
+        <line num="283" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="284" count="0" type="stmt"/>
+        <line num="287" count="0" type="stmt"/>
+        <line num="294" count="8" type="stmt"/>
+        <line num="296" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="297" count="0" type="stmt"/>
+        <line num="300" count="8" type="stmt"/>
+        <line num="301" count="8" type="stmt"/>
+        <line num="312" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ProductDetailsPage">
+      <metrics statements="44" coveredstatements="28" conditionals="30" coveredconditionals="15" methods="9" coveredmethods="5"/>
+      <file name="ProductDetailsPage.css" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductDetailsPage\ProductDetailsPage.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProductDetailsPage.tsx" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductDetailsPage\ProductDetailsPage.tsx">
+        <metrics statements="44" coveredstatements="28" conditionals="30" coveredconditionals="15" methods="9" coveredmethods="5"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="10" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="55" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="66" count="7" type="cond" truecount="3" falsecount="1"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="90" count="7" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="110" count="7" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="149" count="2" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ProductFormPage">
+      <metrics statements="76" coveredstatements="63" conditionals="49" coveredconditionals="38" methods="18" coveredmethods="12"/>
+      <file name="ProductFormPage.css" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductFormPage\ProductFormPage.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProductFormPage.tsx" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductFormPage\ProductFormPage.tsx">
+        <metrics statements="76" coveredstatements="63" conditionals="49" coveredconditionals="38" methods="18" coveredmethods="12"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="14" type="stmt"/>
+        <line num="31" count="14" type="stmt"/>
+        <line num="33" count="14" type="stmt"/>
+        <line num="35" count="14" type="stmt"/>
+        <line num="36" count="14" type="stmt"/>
+        <line num="37" count="14" type="stmt"/>
+        <line num="38" count="14" type="stmt"/>
+        <line num="39" count="14" type="stmt"/>
+        <line num="40" count="14" type="stmt"/>
+        <line num="42" count="14" type="stmt"/>
+        <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="14" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="78" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="85" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="90" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="95" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="103" count="14" type="stmt"/>
+        <line num="107" count="5" type="stmt"/>
+        <line num="112" count="5" type="stmt"/>
+        <line num="117" count="5" type="stmt"/>
+        <line num="120" count="14" type="stmt"/>
+        <line num="121" count="3" type="stmt"/>
+        <line num="123" count="3" type="stmt"/>
+        <line num="125" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="126" count="2" type="stmt"/>
+        <line num="127" count="2" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+        <line num="131" count="1" type="stmt"/>
+        <line num="132" count="1" type="stmt"/>
+        <line num="133" count="1" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="143" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="155" count="1" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="159" count="0" type="stmt"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="172" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="173" count="1" type="stmt"/>
+        <line num="182" count="13" type="cond" truecount="2" falsecount="3"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="188" count="0" type="stmt"/>
+        <line num="201" count="13" type="stmt"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="246" count="2" type="stmt"/>
+        <line num="271" count="1" type="stmt"/>
+        <line num="320" count="1" type="stmt"/>
+        <line num="348" count="1" type="stmt"/>
+        <line num="370" count="0" type="stmt"/>
+        <line num="401" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ProductsPage">
+      <metrics statements="13" coveredstatements="9" conditionals="25" coveredconditionals="10" methods="7" coveredmethods="5"/>
+      <file name="ProductsPage.css" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductsPage\ProductsPage.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProductsPage.tsx" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\pages\ProductsPage\ProductsPage.tsx">
+        <metrics statements="13" coveredstatements="9" conditionals="25" coveredconditionals="10" methods="7" coveredmethods="5"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="155" count="2" type="stmt"/>
+        <line num="159" count="0" type="stmt"/>
+        <line num="164" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="168" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="38" coveredstatements="29" conditionals="22" coveredconditionals="10" methods="5" coveredmethods="5"/>
+      <file name="productService.ts" path="C:\Users\EMBN\Downloads\Teste\EvolucionalTest\React\src\services\productService.ts">
+        <metrics statements="38" coveredstatements="29" conditionals="22" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="46" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="68" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="87" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="88" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="103" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

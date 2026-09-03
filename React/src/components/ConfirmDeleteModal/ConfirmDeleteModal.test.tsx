@@ -1,6 +1,11 @@
-import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { ConfirmDeleteModal } from './ConfirmDeleteModal';
+import {
+    fireEvent,
+    render,
+    screen,
+    within,
+} from '@testing-library/react';
 
 describe('ConfirmDeleteModal', () => {
     it('exibe o produto e permite cancelar', () => {
@@ -17,7 +22,12 @@ describe('ConfirmDeleteModal', () => {
         const onConfirm = vi.fn();
         render(<ConfirmDeleteModal productName="Teclado" onCancel={vi.fn()} onConfirm={onConfirm} />);
 
-        fireEvent.click(screen.getByRole('button', { name: 'Excluir' }));
+        const dialog = screen.getByRole('dialog');
+
+        fireEvent.click(
+            within(dialog).getByRole('button', { name: 'Excluir' })
+        );
+
         expect(onConfirm).toHaveBeenCalledTimes(1);
     });
 });

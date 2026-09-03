@@ -8,12 +8,17 @@ export const ConfirmDeleteModal = ({
 }: ConfirmDeleteModalProps) => {
     return (
         <div className="delete-modal-overlay">
-            <div className="delete-modal">
+            <div
+                className="delete-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="delete-modal-title"
+            >
                 <div className="delete-modal-icon">
                     !
                 </div>
 
-                <h2>Excluir produto?</h2>
+                <h2 id="delete-modal-title">Excluir produto?</h2>
 
                 <p>
                     Tem certeza que deseja excluir o produto
