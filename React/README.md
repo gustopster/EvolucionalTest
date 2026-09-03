@@ -1,6 +1,6 @@
 # Teste Prático — Desenvolvedor(a) Pleno Front-end / React
 
-Aplicação web para gerenciamento de produtos, desenvolvida como parte de um teste técnico para avaliação de conhecimentos em React, TypeScript, integração com API e organização de código.
+Aplicação web para gerenciamento de produtos, desenvolvida como parte de um teste técnico para avaliação de conhecimentos em React, TypeScript, integração com API, testes automatizados e organização de código.
 
 ## Tecnologias
 
@@ -10,6 +10,8 @@ Aplicação web para gerenciamento de produtos, desenvolvida como parte de um te
 * React Router DOM
 * CSS
 * JSON Server
+* Vitest
+* React Testing Library
 * ESLint
 
 ## Funcionalidades
@@ -47,11 +49,71 @@ Aplicação web para gerenciamento de produtos, desenvolvida como parte de um te
 * Estoque maior ou igual a zero
 * Feedback visual de sucesso e erro
 
+### Testes automatizados
+
+* Testes unitários e de componentes com Vitest
+* Testes de interação com React Testing Library
+* Cobertura dos principais fluxos da aplicação
+* Testes de listagem de produtos
+* Testes de detalhes e exclusão
+* Testes de cadastro e edição
+* Testes do hook `useProducts`
+* Testes da camada de serviços
+* Teste do componente de confirmação de exclusão
+
+A cobertura atual do projeto é de aproximadamente:
+
+* **74,14%** de Statements
+* **58,01%** de Branches
+* **75,40%** de Functions
+* **73,97%** de Lines
+
 ## Estrutura do projeto
 
 ```text
 .
+├── README.md
+├── coverage
+│   ├── base.css
+│   ├── block-navigation.js
+│   ├── clover.xml
+│   ├── components
+│   │   └── ConfirmDeleteModal
+│   │       ├── ConfirmDeleteModal.css.html
+│   │       ├── ConfirmDeleteModal.tsx.html
+│   │       └── index.html
+│   ├── coverage-final.json
+│   ├── favicon.png
+│   ├── hooks
+│   │   ├── index.html
+│   │   └── useProducts.ts.html
+│   ├── index.html
+│   ├── pages
+│   │   ├── ProductDetailsPage
+│   │   │   ├── ProductDetailsPage.css.html
+│   │   │   ├── ProductDetailsPage.tsx.html
+│   │   │   └── index.html
+│   │   ├── ProductFormPage
+│   │   │   ├── ProductFormPage.css.html
+│   │   │   ├── ProductFormPage.tsx.html
+│   │   │   └── index.html
+│   │   └── ProductsPage
+│   │       ├── ProductsPage.css.html
+│   │       ├── ProductsPage.tsx.html
+│   │       └── index.html
+│   ├── prettify.css
+│   ├── prettify.js
+│   ├── services
+│   │   ├── index.html
+│   │   └── productService.ts.html
+│   ├── sort-arrow-sprite.png
+│   └── sorter.js
 ├── db.json
+├── dist
+│   ├── assets
+│   │   ├── index-BqnbJyd7.js
+│   │   └── index-DMrxRT5F.css
+│   └── index.html
 ├── eslint.config.js
 ├── estrutura.txt
 ├── index.html
@@ -63,23 +125,31 @@ Aplicação web para gerenciamento de produtos, desenvolvida como parte de um te
 │   ├── components
 │   │   └── ConfirmDeleteModal
 │   │       ├── ConfirmDeleteModal.css
+│   │       ├── ConfirmDeleteModal.test.tsx
 │   │       └── ConfirmDeleteModal.tsx
 │   ├── hooks
+│   │   ├── useProducts.test.tsx
 │   │   └── useProducts.ts
 │   ├── index.css
 │   ├── main.tsx
 │   ├── pages
 │   │   ├── ProductDetailsPage
 │   │   │   ├── ProductDetailsPage.css
+│   │   │   ├── ProductDetailsPage.test.tsx
 │   │   │   └── ProductDetailsPage.tsx
 │   │   ├── ProductFormPage
 │   │   │   ├── ProductFormPage.css
+│   │   │   ├── ProductFormPage.test.tsx
 │   │   │   └── ProductFormPage.tsx
 │   │   └── ProductsPage
 │   │       ├── ProductsPage.css
+│   │       ├── ProductsPage.test.tsx
 │   │       └── ProductsPage.tsx
 │   ├── services
+│   │   ├── productService.test.ts
 │   │   └── productService.ts
+│   ├── test
+│   │   └── setup.ts
 │   └── types
 │       ├── components
 │       │   └── confirmDeleteModal.ts
@@ -87,8 +157,8 @@ Aplicação web para gerenciamento de produtos, desenvolvida como parte de um te
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
-└── vite.config.ts
-
+├── vite.config.ts
+└── vitest.config.ts
 ```
 
 A comunicação com a API é centralizada em `productService.ts`, enquanto a lógica da listagem de produtos é isolada no hook `useProducts`.
@@ -142,6 +212,22 @@ A aplicação estará disponível no endereço informado pelo Vite no terminal, 
 http://localhost:5173
 ```
 
+## Testes
+
+Para executar os testes:
+
+```bash
+npm run test
+```
+
+Para executar os testes com cobertura de código:
+
+```bash
+npm run cov
+```
+
+O relatório de cobertura é gerado na pasta `coverage`.
+
 ## Rotas
 
 | Rota                   | Descrição            |
@@ -177,6 +263,17 @@ Os seguintes campos possuem validação no formulário:
 | Estoque   | Obrigatório e maior ou igual a zero  |
 | Ativo     | Define a disponibilidade do produto  |
 
+## Scripts disponíveis
+
+| Comando           | Descrição                             |
+| ----------------- | ------------------------------------- |
+| `npm run dev`     | Inicia o servidor de desenvolvimento  |
+| `npm run build`   | Gera o build de produção              |
+| `npm run lint`    | Executa a análise estática do código  |
+| `npm run test`    | Executa os testes automatizados       |
+| `npm run cov`     | Executa os testes com cobertura       |
+| `npm run preview` | Inicia o preview do build de produção |
+
 ## Observações
 
-O projeto foi desenvolvido priorizando separação de responsabilidades, tipagem com TypeScript, componentes reutilizáveis e integração com a API através de uma camada de serviço dedicada.
+O projeto foi desenvolvido priorizando separação de responsabilidades, tipagem com TypeScript, componentes reutilizáveis, testes automatizados e integração com a API através de uma camada de serviço dedicada.
