@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { ProductsPage } from './pages/ProductsPage/ProductsPage';
 import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
+import { ProductFormPage } from './pages/ProductFormPage/ProductFormPage';
 
 const App = () => {
   return (
@@ -19,6 +20,16 @@ const App = () => {
       <Route
         path="/produtos"
         element={<ProductsPage />}
+      />
+
+      <Route
+        path="/produtos/novo"
+        element={<ProductFormPage />}
+      />
+
+      <Route
+        path="/produtos/:id/editar"
+        element={<ProductFormPage />}
       />
 
       <Route

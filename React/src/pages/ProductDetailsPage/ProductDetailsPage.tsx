@@ -78,7 +78,7 @@ export const ProductDetailsPage = () => {
                     <button
                         type="button"
                         className="primary-button"
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate("/produtos")}
                     >
                         Voltar para produtos
                     </button>
@@ -93,7 +93,7 @@ export const ProductDetailsPage = () => {
                 <button
                     type="button"
                     className="back-button"
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate("/produtos")}
                 >
                     ← Voltar para produtos
                 </button>
